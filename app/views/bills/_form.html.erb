@@ -2,8 +2,8 @@
   <%= form_with model: bill do |form| %>
    
       <div class="col-12">
-        <%= form.label :bill_id, "Mes" %>
-        <%= form.collection_select :bill_id, Bill.all, :id, :name,{}, {class: "form-select"} %>
+        <%= form.label :month_id, "Mes" %>
+        <%= form.collection_select :month_id, Month.all, :id, :name,{}, {class: "form-select"} %>
       </div>
    
     

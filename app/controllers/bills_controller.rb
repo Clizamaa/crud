@@ -15,7 +15,7 @@ class BillsController < ApplicationController
   def create
     @bill = Bill.new(bill_params)
     if @bill.save
-      redirect_to @bill
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -42,6 +42,6 @@ class BillsController < ApplicationController
   
   private
   def bill_params
-    params.require(:bill).permit(:name, :price)
+    params.require(:bill).permit(:name, :price, :month_id)
   end
 end
