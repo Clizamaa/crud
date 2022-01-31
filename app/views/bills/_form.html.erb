@@ -1,0 +1,23 @@
+
+  <%= form_with model: bill do |form| %>
+   
+      <div class="col-12">
+        <%= form.label :bill_id, "Mes" %>
+        <%= form.collection_select :bill_id, Bill.all, :id, :name,{}, {class: "form-select"} %>
+      </div>
+   
+    
+   
+      <%= form.label :name %><br>
+      <%= form.text_field :name, class: "form-control" %>
+    
+
+    
+      <%= form.label :price %><br>
+      <%= form.number_field :price, class: "form-control" %>
+    
+
+    
+      <%= form.submit "Crear", class: "btn btn-success mt-3" %>
+    
+  <% end %>
