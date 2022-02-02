@@ -1,23 +1,15 @@
-
-  <%= form_with model: bill do |form| %>
-   
-      <div class="col-12">
+    <%= form_with model: bill do |form| %>
+    
         <%= form.label :month_id, "Mes" %>
         <%= form.collection_select :month_id, Month.all, :id, :name,{}, {class: "form-select"} %>
-      </div>
-   
+        <%= form.label :name %><br>
+        <%= form.text_field :name, class: "form-control" %>
     
-   
-      <%= form.label :name %><br>
-      <%= form.text_field :name, class: "form-control" %>
+        <%= form.label :price %><br>
+        <%= form.number_field :price, class: "form-control" %>
     
+        <%= form.submit "Crear", class: "btn btn-success mt-3" %>
+        <%= link_to "Volver a Lista", root_path, :class => "btn btn-primary mt-3" %>
+    
+    <% end %>
 
-    
-      <%= form.label :price %><br>
-      <%= form.number_field :price, class: "form-control" %>
-    
-
-    
-      <%= form.submit "Crear", class: "btn btn-success mt-3" %>
-    
-  <% end %>
