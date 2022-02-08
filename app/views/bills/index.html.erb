@@ -12,7 +12,7 @@
     <div class="col-8">
         <div class="card shadow rounded text-dark bg-light mt-4">
             <div class="card-header">
-                <h5 class="card-title" id="nombreMes"></h5>
+                <h5 class="card-title" id="nombreMes" ></h5>
             </div>
 
             <div class="card-body">
@@ -46,13 +46,18 @@
 </div>
 
 <script type="module">
-//    get value month_id
-    var month_id = document.getElementById("month_id").value;
-    var month_name = document.getElementById("month_id").options[document.getElementById("month_id").selectedIndex].text;
-    console.log(month_name);
-
-//    set value month_name
-    document.getElementById("nombreMes").innerText = `Cuentas mes ${month_name}`
-
+        const month = document.getElementById('month_id');
+    
+    // refresh the table when the month is changed
+        month.addEventListener('change', function() {
+        const monthId = month.value;
+        const url = '/bills/' + monthId;
+        window.location.href = url;
+    });
 </script>
+
+
+
+
+
 
